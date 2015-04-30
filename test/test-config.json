@@ -1,0 +1,14 @@
+{
+  "userName": "simple-sql-test-user",
+  "password": "simple-sql-test-user-password",
+  "server": "127.0.0.1",
+  "options": {
+    "database": "simple-sql-test"
+  },
+  "debug" : {
+    "packet": true,
+    "data": true,
+    "payload": true,
+    "token": true
+  }
+}

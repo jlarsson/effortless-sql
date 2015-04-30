@@ -1,0 +1,28 @@
+{
+  "name": "simple-sql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jlarsson/simple-sql.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jlarsson/simple-sql/issues"
+  },
+  "homepage": "https://github.com/jlarsson/simple-sql",
+  "dependencies": {
+    "debug": "^2.1.3",
+    "native-or-bluebird": "^1.2.0",
+    "tedious": "^1.11.0"
+  },
+  "devDependencies": {
+    "bluebird": "^2.9.25",
+    "mocha": "^2.2.4"
+  }
+}
