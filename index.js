@@ -53,6 +53,16 @@ proto.query = function sql$query (statement, parameters) {
   })
 }
 
+proto.querySingleRow = function sql$queryRow(statement, parameters) {
+  return this.query(statement, parameters)
+    .then(mapSingleRow)
+}
+
+proto.queryRows = function sql$queryRows(statement, parameters) {
+  return this.query(statement, parameters)
+    .then(mapRows)
+}
+
 proto.execute = function sql$execute (procedure, parameters) {
   return this.connect()
   .then(function (connection) {
@@ -60,12 +70,22 @@ proto.execute = function sql$execute (procedure, parameters) {
   })
 }
 
+proto.executeSingleRow = function sql$executeSingleRow (procedure, parameters) {
+  return this.execute(procedure, parameters)
+    .then(mapSingleRow)
+}
+
+proto.executeRows = function sql$executeRows (procedure, parameters) {
+  return this.execute(procedure, parameters)
+    .then(mapRows)
+}
+
 function request (connection, statement, parameters, invokationType) {
   debug('%s (%j)', statement, parameters)
   return new Promise(function (resolve, reject) {
     var result = {
       rows: [],
-      returnValue: undefined,
+      returnValue: {},
       duration: 0,
       rowCount: 0
     }
@@ -99,7 +119,7 @@ function request (connection, statement, parameters, invokationType) {
     }
 
     function onReturnValue (name, value) {
-      result.returnValue[name] = value
+      //result.returnValue[name] = value
     }
 
     function onColumnMetadata (columns) {
@@ -155,4 +175,12 @@ function mapParameterType (value) {
 function normalizeParameter (parameter) {
   var type = mapParameterType(parameter)
   return ParameterNormalizer[type](parameter)
+}
+
+function mapRows (result) {
+  return result ? result.rows : []
+}
+
+function mapSingleRow(result) {
+  return mapRows(result)[0]
 }
