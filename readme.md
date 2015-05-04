@@ -1,8 +1,8 @@
+## Super simple SQL client for node
+
 [![npm][npm-badge]][npm-url]
 [![license][lic-badge]](LICENSE)
 [![js-standard-style][style-badge]][style-url]
-
-## Super simple SQL client for node
 
 - Simplest possible api
 - Promise based
