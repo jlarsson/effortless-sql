@@ -23,7 +23,7 @@ var options = {
   }
 }
 
-var sql = require('simple-sql')(options)
+var sql = require('effortless-sql')(options)
 
 sql.queryRows(
   'select readbility, simplicity from Stuff where coolness = @coolness',
@@ -40,7 +40,7 @@ sql.queryRows(
 ### Create connection
 
 ```js
-var sqlFactory = require('simple-sql')
+var sqlFactory = require('effortless-sql')
 var sql = sqlFactory(options)
 ```
 
@@ -80,7 +80,7 @@ Returns
 ```
 
 ### Parameter mapping
-Below, ```T``` is an alias for ```require('simple-sql').TYPES``` which is same as ```require('tedious').TYPES```
+Below, ```T``` is an alias for ```require('effortless-sql').TYPES``` which is same as ```require('tedious').TYPES```
 
 |notation|mapped name|mapped value|mapped type|
 |--------|-----------|------------|-----------|
@@ -97,8 +97,8 @@ Below, ```T``` is an alias for ```require('simple-sql').TYPES``` which is same a
 Tests run on my computer, but are not linked to any CI. I'm ashamed.
 
 
-[npm-badge]: https://img.shields.io/npm/v/simple-sql.svg?style=flat
-[npm-url]: https://npmjs.org/package/simple-sql
-[lic-badge]: https://img.shields.io/npm/l/simple-sql.svg?style=flat
+[npm-badge]: https://img.shields.io/npm/v/effortless-sql.svg?style=flat
+[npm-url]: https://npmjs.org/package/effortless-sql
+[lic-badge]: https://img.shields.io/npm/l/effortless-sql.svg?style=flat
 [style-badge]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat
 [style-url]: https://github.com/feross/standard

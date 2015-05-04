@@ -1,6 +1,6 @@
 'use strict'
 
-var debug = require('debug')('simple-sql')
+var debug = require('debug')('effortless-sql')
 var Promise = require('native-or-bluebird')
 var tedious = require('tedious')
 
