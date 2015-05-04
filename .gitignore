@@ -1,5 +1,5 @@
-# Sensitive data
-# private/
+# Temp
+*.tgz
 
 # Logs
 logs
