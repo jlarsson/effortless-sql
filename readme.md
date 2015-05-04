@@ -82,8 +82,8 @@ Returns
 ### Parameter mapping
 Below, ```T``` is an alias for ```require('simple-sql').TYPES``` which is same as ```require('tedious').TYPES```
 
-|notation  |mapped name  |mapped value|mapped type|
-|-|-|-|-|
+|notation|mapped name|mapped value|mapped type|
+|--------|-----------|------------|-----------|
 |```{a:null}```|a|null|T.NVarChar|
 |```{a:undefined}```|a|null|T.NVarChar|
 |```{a:1}```|a|1|T.BigInt|
