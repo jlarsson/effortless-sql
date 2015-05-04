@@ -12,6 +12,8 @@ module.exports = function createSql (config) {
   return new Sql(config)
 }
 
+module.exports.TYPES = TYPES
+
 function Sql (config) {
   debug('creating sql (%j)', config)
   this.config = config
@@ -19,7 +21,7 @@ function Sql (config) {
 
 var proto = Sql.prototype
 
-proto.type = TYPES
+proto.TYPES = TYPES
 
 proto.connect = function sql$connect () {
   debug('connect %j', this.config)
